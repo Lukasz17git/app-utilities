@@ -45,8 +45,7 @@ jobs:
       - run: npm install -g npm@11
       - run: npm ci
       - name: Create Release Pull Request or Publish
-        uses: changesets/action@v1
+        # v2 for @changesets/cli v3; v1 publishes but creates no git tags or GitHub releases
+        uses: changesets/action@v2
         with:
-          publish: npm run release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          publish-script: npm run release
