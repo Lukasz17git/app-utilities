@@ -1,0 +1,61 @@
+{
+  "name": "@lukasz17/app-utilities",
+  "version": "0.0.0",
+  "description": "Strictly typed utilities for building apps.",
+  "keywords": [
+    "utilities",
+    "typescript",
+    "strict",
+    "object"
+  ],
+  "author": "Lukasz Maraj",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vitest",
+    "test": "vitest run",
+    "build": "tsdown",
+    "lint": "tsc",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "ci": "npm run lint && npm run format:check && npm run test && npm run build",
+    "release": "npm run build && changeset publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lukasz17git/app-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Lukasz17git/app-utilities/issues"
+  },
+  "homepage": "https://github.com/Lukasz17git/app-utilities#readme",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/core": "^0.18.5",
+    "@changesets/cli": "^3.0.3",
+    "prettier": "^3.9.10",
+    "publint": "^0.3.25",
+    "tsdown": "^0.23.1",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.5"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  }
+}
