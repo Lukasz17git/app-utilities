@@ -8,7 +8,7 @@ npm install @lukasz17/app-utilities
 
 ## Obj
 
-Static helpers for objects. The returned types follow what JavaScript really returns.
+Helpers for objects. The returned types follow what JavaScript really returns.
 
 ```ts
 import { Obj } from '@lukasz17/app-utilities'
@@ -21,7 +21,7 @@ Obj.pick(user, ['id', 'name']) // { id: number; name: string }
 Obj.omit(user, ['role']) // { id: number; name: string }
 Obj.mapValues(user, String) // { id: string; name: string; role: string }
 Obj.record(['a', 'b'], 0) // Record<'a' | 'b', number>
-Obj.createRecord(['a', 'b'], (key) => key.toUpperCase()) // Record<'a' | 'b', string>
+Obj.createRecord(['a', 'b'], key => key.toUpperCase()) // Record<'a' | 'b', string>
 Obj.flip({ draft: 'D', done: 'X' }) // { D: 'draft'; X: 'done' }
 Obj.hasKey(user, someString) // narrows someString to 'id' | 'name' | 'role'
 Obj.isEmpty({}) // true

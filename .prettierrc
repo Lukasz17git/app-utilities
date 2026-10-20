@@ -3,6 +3,13 @@
   "singleQuote": true,
   "jsxSingleQuote": true,
   "trailingComma": "all",
+  "arrowParens": "avoid",
   "printWidth": 120,
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      "files": "*.{ts,tsx,js,mjs,cjs}",
+      "options": { "tabWidth": 3 }
+    }
+  ]
 }
