@@ -1,5 +1,11 @@
 # @lukasz17/app-utilities
 
+## 0.1.2
+
+### Patch Changes
+
+- f610bef: Obj is a class with static methods again; calls (`Obj.keys(user)`) and types stay the same
+
 ## 0.1.1
 
 ### Patch Changes
