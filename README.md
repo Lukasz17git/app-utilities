@@ -44,6 +44,28 @@ Obj.isEmpty({}) // true
 
 TypeScript object types don't stop extra keys at runtime (`const a: { id: number } = userWithMoreKeys`), so `keys`, `values` and `entries` can return more than their type says, same as `Object.keys`.
 
+## Types
+
+The types `Obj` returns, to use in your own helpers.
+
+```ts
+import type { TEntry, TPrettify, TStringKey, TValue } from '@lukasz17/app-utilities'
+
+type TUser = { id: number; name: string; 1: boolean }
+
+type TUserKey = TStringKey<TUser> // 'id' | 'name' | '1'
+type TUserValue = TValue<TUser> // number | string | boolean
+type TUserEntry = TEntry<TUser> // ['id', number] | ['name', string] | ['1', boolean]
+type TAdmin = TPrettify<Pick<TUser, 'id'> & { role: 'admin' }> // { id: number; role: 'admin' }
+```
+
+| Type            | Is                                                                                     |
+| --------------- | -------------------------------------------------------------------------------------- |
+| `TStringKey<T>` | Keys as `Object.keys` returns them: numbers as strings (`1` -> `'1'`), symbols skipped |
+| `TValue<T>`     | Values as `Object.values` returns them (values of symbol keys skipped)                 |
+| `TEntry<T>`     | `[key, value]` pairs, each value typed by its own key                                  |
+| `TPrettify<T>`  | Same type, shown on hover as one object instead of `Pick<...> & {...}`                 |
+
 ## Development
 
 | Script           | Does                                                                    |
@@ -58,5 +80,5 @@ TypeScript object types don't stop extra keys at runtime (`const a: { id: number
 ### Releasing
 
 1. Run `npx changeset`, pick the bump type and describe the change, and commit the generated file.
-2. When pushed to `master`, CI opens a "Version Packages" PR.
+2. When pushed to `master`, CI opens a "Version Packages" PR and runs the checks on it.
 3. Merging that PR publishes to npm with [trusted publishing](https://docs.npmjs.com/trusted-publishers) (no npm token needed).
