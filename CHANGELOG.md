@@ -1,5 +1,11 @@
 # @lukasz17/app-utilities
 
+## 0.1.4
+
+### Patch Changes
+
+- e81b080: The README now documents the exported types `TStringKey`, `TValue`, `TEntry` and `TPrettify` (no code changes)
+
 ## 0.1.3
 
 ### Patch Changes
