@@ -1,6 +1,6 @@
 {
   "name": "@lukasz17/app-utilities",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Strictly typed utilities for building apps.",
   "keywords": [
     "utilities",

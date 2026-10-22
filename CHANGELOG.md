@@ -1,5 +1,11 @@
 # @lukasz17/app-utilities
 
+## 0.1.3
+
+### Patch Changes
+
+- c5e2754: Added a CHANGELOG check before publishing (no code changes)
+
 ## 0.1.2
 
 ### Patch Changes
